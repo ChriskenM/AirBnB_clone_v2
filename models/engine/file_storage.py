@@ -13,7 +13,7 @@ class FileStorage:
            Returns a list of objects of one type of class.
         """
         if cls is not None:
-            if type(cls) = str:
+            if type(cls) == str:
                 cls = eval(cls)
             cls_dict = {}
             for k, v in self.__objects.items():

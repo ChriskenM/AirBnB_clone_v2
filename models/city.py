@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ City Module for HBNB project """
 from models.base_model import BaseModel, Base
-from sqlalchemy import column, string, ForeignKey 
+from sqlalchemy import Column, String, ForeignKey 
 from sqlalchemy.orm import relationship
 
 class City(BaseModel, Base):
@@ -12,5 +12,5 @@ class City(BaseModel, Base):
         state_id: The state id of the City.
     """
     __tablename__ = "cities"
-    name = column(String(128), nullable=False)
-    state_id = column(String(60), nullable=False, ForeignKey("states.id"))
+    name = Column(String(128), nullable=False)
+    state_id = Column(String(60), ForeignKey("states.id"), nullable=False)
